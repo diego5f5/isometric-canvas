@@ -53,9 +53,8 @@ const App = () => {
 
   return (
     <div>
-      <h1>Fabric Canvas</h1>
-      <button onClick={() => drawMap()}>Draw Map</button>
       <canvas id="c" />
+      <button onClick={() => drawMap()}>Draw Map</button>
     </div>
   );
 };
