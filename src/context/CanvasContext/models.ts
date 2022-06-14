@@ -1,7 +1,7 @@
 import { Canvas } from "fabric/fabric-impl";
 
 export type CanvasContexTypes = {
-  canvas: Canvas | null;
+  canvas: Canvas;
   setCanvas: (value: Canvas) => void;
   initCanvas: () => void;
   cartToIso: (value: CoordsTypes) => CoordsTypes;

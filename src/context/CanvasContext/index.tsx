@@ -6,13 +6,14 @@ import { Canvas } from "fabric/fabric-impl";
 export const CreateYourPostsContext = createContext({} as CanvasContexTypes);
 
 const CanvasContextProvider = ({ children }: { children: ReactNode }) => {
-  const [canvas, setCanvas] = useState<Canvas | null>(null);
+  const [canvas, setCanvas] = useState<Canvas>({} as Canvas);
 
   const initCanvas = () => {
     const newCanvas = new fabric.Canvas("c", {
-      height: 800,
+      height: 600,
       width: 800,
       backgroundColor: "gray",
+      selection: false,
     });
 
     setCanvas(newCanvas);
