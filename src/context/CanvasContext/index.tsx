@@ -1,23 +1,12 @@
 import { createContext, useState, useContext, ReactNode } from "react";
-import { fabric } from "fabric";
+import { Canvas } from "fabric/fabric-impl";
 
 import { CanvasContexTypes, CoordsTypes } from "./models";
-import { Canvas } from "fabric/fabric-impl";
+
 export const CreateYourPostsContext = createContext({} as CanvasContexTypes);
 
 const CanvasContextProvider = ({ children }: { children: ReactNode }) => {
   const [canvas, setCanvas] = useState<Canvas>({} as Canvas);
-
-  const initCanvas = () => {
-    const newCanvas = new fabric.Canvas("c", {
-      height: 600,
-      width: 800,
-      backgroundColor: "gray",
-      selection: false,
-    });
-
-    setCanvas(newCanvas);
-  };
 
   const cartToIso = ({ x, y }: CoordsTypes) => {
     const isoX = (x - y) / 2;
@@ -36,7 +25,6 @@ const CanvasContextProvider = ({ children }: { children: ReactNode }) => {
   return (
     <CreateYourPostsContext.Provider
       value={{
-        initCanvas,
         canvas,
         setCanvas,
         cartToIso,
