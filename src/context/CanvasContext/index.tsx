@@ -15,20 +15,12 @@ const CanvasContextProvider = ({ children }: { children: ReactNode }) => {
     return { x: isoX, y: isoY };
   };
 
-  const isoToCart = ({ x, y }: CoordsTypes) => {
-    const cartX = (2 * y + x) / 2;
-    const cartY = (2 * y - x) / 2;
-
-    return { x: cartX, y: cartY };
-  };
-
   return (
     <CreateYourPostsContext.Provider
       value={{
         canvas,
         setCanvas,
         cartToIso,
-        isoToCart,
       }}
     >
       {children}

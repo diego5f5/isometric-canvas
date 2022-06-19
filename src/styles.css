@@ -9,7 +9,7 @@ body {
   overflow: hidden;
 }
 
-.game-container {
+.c-container {
   margin: 0 auto;
   outline: 1px solid #fff;
   width: max-content;
@@ -17,6 +17,6 @@ body {
   transform: scale(2) translateY(50%);
 }
 
-.game-container canvas {
+.c-container canvas {
   image-rendering: pixelated;
 }
